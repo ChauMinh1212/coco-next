@@ -1,103 +1,276 @@
-import Image from "next/image";
+'use client'
+import { useEffect, useRef, useState } from "react";
+import { Lightbox } from "yet-another-react-lightbox";
+import Counter from "yet-another-react-lightbox/plugins/counter";
+import "yet-another-react-lightbox/plugins/counter.css";
+import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
+import "yet-another-react-lightbox/plugins/thumbnails.css";
+import Video from "yet-another-react-lightbox/plugins/video";
+import "yet-another-react-lightbox/styles.css";
+import { IMG_SPACE_COMMON, QUESTIONS, ROOMS, SERVICES } from "@/app/constants/common";
+import styles from "@/app/styles/HomePage.module.css";
+import Link from "next/link";
+import ImageCustom from "@/app/components/common/Image";
+import SeeMore from "@/app/components/common/SeeMore";
+import SlideImg from "@/app/components/common/SlideImage";
 
-export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+const HomePage = () => {
+    const [itemOpen, setItemOpen] = useState<null | number>(null)
+    const [openLightBox, setOpenLightBox] = useState(false);
+    const [slides, setSlides] = useState<any>([])
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+    const [seeMore, setSeeMore] = useState(false)
+    const [seeMoreCocoHabour, setSeeMoreCocoHabour] = useState(true)
+    const [seeMoreCocoFarm, setSeeMoreCocoFarm] = useState(true)
+
+    useEffect(() => {
+        const handleClickOutside = (event: any) => {
+            if (event.target.getAttribute('data-id') != itemOpen) {
+                setItemOpen(null);
+            }
+        };
+
+        document.addEventListener("mousedown", handleClickOutside);
+
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [itemOpen]);
+
+    return (
+        <div className={`w-full pb-[30px`}>
+            {/* Mới */}
+            <div className='bg-[url("/img/bg1.png")] bg-cover bg-no-repeat pb-[120px] sm:pb-[80px]'>
+                <div className='max-w-7xl mx-auto'>
+                    <ImageCustom src="/img/top1.svg" alt="top" />
+                    <div className='relative mt-[-30px]'>
+                        <div className='w-[70%] mx-auto sm:w-[90%]'>
+                            <ImageCustom src="/img/chat2.png" alt="bot" />
+                        </div>
+                        <div className='absolute top-[63%] right-[20%] w-[50%] text-center font-baloo font-bold text-[25px] md:text-[20px] sm:text-[10px] esm:text-[16px]'>
+                            Xin chào bạn, tui là Coco. <br />
+                            Welcome bạn đến trải nghiệm Homestay thư giãn cùng thiên nhiên xanh ngát tai ngôi nhà Coco Garden !!!
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className='relative pb-[110px] sm:pb-[60px]'>
+                <div className="bg-gradient-to-r from-[#0097b2] to-[#7ed957] absolute inset-0 opacity-[0.68] z-0"></div>
+                <div className='flex items-center absolute top-[-75px] right-0 left-0 md:top-[-60px] sm:top-[-44px]'>
+                    <div className='border-t-[3px] border-[#00552c] border-dashed flex-1'></div>
+                    <div className='bg-white border-[#00552c] border-[3px] rounded-[45px] px-[75px] py-[4px] w-fit mx-auto text-center sm:px-[40px]'>
+                        <h1 className='font-frank text-[#ffde59] text-[70px] text-line-[1.8px_#000] tracking-[-3px] md:text-[50px] md:text-line-[1.3px_#000] sm:text-[30px] sm:text-line-[1px_#000]'>COCO GARDEN</h1>
+                        <p className='font-baloo text-[40px] font-bold text-white text-line-[1.9px_#000] mt-[-25px] md:text-[35px] md:text-line-[1.3px_#000] md:mt-[-20px] sm:text-[25px] sm:text-line-[0.8px_#000] sm:mt-[-10px]'>có gì ???</p>
+                    </div>
+                    <div className='border-t-[3px] border-[#00552c] border-dashed flex-1'></div>
+                </div>
+                <div className='relative max-w-7xl mx-auto pt-[110px] sm:pt-[70px] px-[10px]'>
+                    <div className='max-w-4xl mx-auto rounded-[40px] bg-white py-[10px] pl-[50px] sm:pl-[20px] pr-[10px] sm:pr-[5px]'>
+                        <div className='flex flex-wrap'>
+                            {
+                                SERVICES.map((item, index) => (
+                                    <div key={index} className='flex flex-[50%] items-center py-[7px]'>
+                                        <img loading="lazy" src={item.src} alt="" className='h-[60px] w-[60px] sm:h-[20px] sm:w-[20px] object-contain mr-[20px] sm:mr-[5px]' />
+                                        <p className='font-sriracha text-[#00552c] text-[30px] sm:text-[12px] md:text-[23px]'>{item.name}</p>
+                                    </div>
+                                ))
+                            }
+                        </div>
+                    </div>
+                    <div className='text-center mt-[20px] relative max-w-5xl mx-auto'>
+                        <p className='font-baloo font-bold text-line-[1px_#000] text-[40px] text-white md:text-[30px] sm:text-[20px]'>và hơn thế nữa..</p>
+                        <img src="/img/smile.webp" alt="" className="w-[175px] sm:w-[80px] rotate-[12deg] absolute top-[40%] translate-y-[-60%] right-[2%]" loading="lazy" />
+                    </div>
+                    <div className='max-w-7xl mx-auto px-[10px]'>
+                        <div className='text-[30px] sm:text-[12px] md:text-[23px] font-sriracha max-w-4xl mx-auto rounded-[40px] bg-white py-[10px] pl-[50px] sm:pl-[20px] pr-[10px] sm:pr-[5px]'>
+                            <div className="flex gap-[20px]">
+                                <img loading="lazy" src="/img/i.png" alt="" className="w-[100px] sm:w-[70px] object-contain" />
+                                <p>Chào mừng Quý khách đến với COCO GARDEN 🌴 – một điểm đến lý tưởng để bạn có thể thư giãn và hoà mình vào thiên nhiên xanh mát, vị trí ngay sát Sài Gòn, chỉ 5 phút đi xe qua phà Cát Lái
+                                </p>
+                            </div>
+                            <div className="mt-[20px]">
+                                <p>Lan toả nhịp sống xanh với 95% năng lượng sử dụng tại COCO GARDEN từ mặt trời. Hướng tới NETZERO là mục tiêu hàng đầu tại COCO GARDEN.</p>
+                            </div>
+                            <SeeMore expanded={seeMore}>
+                                <div>
+                                    <div className="mt-[20px]">
+                                        COCO GARDEN 🌴 gồm: COCO HABOUR và COCO FARM
+                                        <br />
+                                        <br />
+                                        1. Khu COCO HABOUR:
+                                        <br />
+                                        - Hệ thống HOMESTAY với thiết kế 3 mặt giáp sông, cho bạn cảm giác yên bình tuyệt đối. Cùng cây cầu dài 50 mét, đặt giữa lòng sông. Giúp bạn tận hưởng từng làn gió mát từ sông, ngắm nhìn hoàng hôn thơ mộng cùng với những âm thanh thiên nhiên êm ả.
+                                        <br />
+                                        - Sắp triển khai: khu Camping, BBQ, đốt lửa trại, hồ bơi,... Đặc biệt phù hợp cho các gia đình, cặp đôi hay nhóm bạn đang muốn “chữa lành” và thoát ra khỏi nhịp sống hối hả.
+                                        <br />
+                                        <br />
+                                        2. Khu COCO FARM: tổ hợp thiên nhiên, nơi bạn có thể khám phá vườn thú, chèo thuyền kayak, hoặc thư giãn giữa những vườn cây xanh rợp bóng mát.
+                                        <br />
+                                        <br />
+                                        Kính chúc Quý khách có những phút giây tuyệt vời tại COCO GARDEN 🌴.
+                                        <br />
+                                        Chúng tôi luôn sẵn sàng hỗ trợ và phục vụ quý khách 24/24 trong suốt quá trình lưu trú
+                                        <br />
+                                        Trân trọng.
+                                    </div>
+                                </div>
+                            </SeeMore>
+                            <div className="mt-[20px] flex justify-end items-end">
+                                {/* <p>Cùng nhiều chương trình hỗ trợ khách hàng.</p> */}
+                                <div onClick={() => setSeeMore(s => !s)} className='cursor-pointer mr-[30px] sm:mr-[3px] text-[25px] sm:text-[14px] text-white text-line-[0.8px_#000] sm:text-line-[0.5px_#000] border-[#000] border-[2px] sm:border-[1px] w-fit rounded-[30px] py-[3px] px-[10px] sm:px-[5px] sm:rounded-[15px] bg-gradient-to-r from-[#0097b2] to-[#7ed957] whitespace-nowrap'>
+                                    {seeMore ? 'Thu gọn' : 'Xem thêm'}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="relative pb-[110px] sm:pb-[60px]">
+                <div className="bg-gradient-to-r from-[#0de5e6] to-[#004aad] absolute inset-0 opacity-[0.68] z-0"></div>
+                <div onClick={() => setSeeMoreCocoHabour(s => !s)} className='cursor-pointer flex items-center absolute top-[-60px] right-0 left-0 md:top-[-45px] sm:top-[-30px] z-[1]'>
+                    <div className='flex items-center bg-white border-[#0076aa] border-[3px] rounded-[45px] px-[75px] py-[4px] w-fit mx-auto text-center sm:px-[40px]'>
+                        <p className='font-frank text-white text-[70px] text-line-[2.5px_#005174] tracking-[-3px] md:text-[50px] md:text-line-[1.3px_#005174] sm:text-[30px] sm:text-line-[1px_#005174]'>COCO HABOUR</p>
+                        <div className={`ml-[20px] ${seeMoreCocoHabour ? styles['triangle-up'] : styles['triangle-down']} bg-[#005174] w-[30px] h-[27px] b-[7px] sm:w-[20px] sm:h-[15px] sm:b-[4px] ml-[10px]`}></div>
+                    </div>
+                </div>
+                <div className="max-w-5xl mx-auto px-[20px] relative">
+                    <div className="flex pt-[100px] sm:pt-[70px] gap-[50px] sm:gap-[17px] md:gap-[30px]">
+                        <div className="w-[30%]">
+                            <ImageCustom src="/img/s.svg" alt="" />
+                        </div>
+                        <div className="flex-1 relative">
+                            <ImageCustom src="/img/chat1.png" alt="" />
+                            <div className="absolute top-[16%] left-[8%] w-[85%] text-[30px] md:text-[23px] sm:text-[10px] esm:text-[16px] font-sriracha">
+                                Nằm ngay Phà Cát Lái, cách phà Cát Lái chỉ 5 phút lái xe. Bạn có thể Seach GG MAP từ khoá “Coco Garden Đồng Nai".
+                                <br />
+                                <br />
+                                Hoặc bấm vào Coco để xem vị trí nhaaa !
+                            </div>
+                        </div>
+                    </div>
+                    <SeeMore expanded={seeMoreCocoHabour}>
+                        <div>
+                            <div className="mt-[30px]">
+                                <p className="text-center font-baloo text-[45px] md:text-[30px] sm:text-[20px] text-white text-line-[1px_#000]">KHÔNG GIAN CHUNG</p>
+                                <SlideImg img={IMG_SPACE_COMMON}></SlideImg>
+                            </div>
+                            <div className="mt-[60px] sm:mt-[20px] flex flex-col gap-[30px]">
+                                {ROOMS.map((item, index) => (
+                                    <div key={index} className="flex esm:flex-col bg-white font-sriracha text-[23px] sm:text-[13px] rounded-[20px]">
+                                        <div onClick={() => { setOpenLightBox(true); setSlides(item.img) }} className="cursor-pointer flex-1 border-[3px] border-[#00552c] rounded-[20px] overflow-hidden aspect-[1/1]">
+                                            <img loading="lazy" src={item.img[0].src} alt="" className="object-cover object-center h-full w-full" />
+                                        </div>
+                                        <div className="flex-1 md:w-full p-[20px] sm:p-[10px] flex flex-col justify-between">
+                                            <div>
+                                                <p>{item.name}</p>
+                                                <p className="whitespace-pre-line">{item.description}</p>
+                                            </div>
+                                            <div className="flex justify-center gap-[20px] text-[25px] sm:text-[15px] mt-[5px]">
+                                                <Link href="https://www.facebook.com/cocogardendn" target="_blank" className="whitespace-nowrap px-[20px] border-[2px] sm:border-[1px] border-black rounded-[20px] bg-gradient-to-r from-[#0097b2] to-[#7ed957] text-white text-line-[0.9px_#000] sm:text-line-[0.5px_#000]">
+                                                    Đặt phòng
+                                                </Link>
+                                                <Link href="https://www.facebook.com/cocogardendn" target="_blank" className="whitespace-nowrap px-[20px] border-[2px] sm:border-[1px] border-black rounded-[20px] bg-white text-[#00552c] text-line-[0.9px_#000] sm:text-line-[0.5px_#000]">
+                                                    Check lịch
+                                                </Link>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
+
+                            </div>
+
+                        </div>
+                    </SeeMore>
+                </div>
+            </div>
+            <div className="relative pb-[30px]">
+                <div className="bg-gradient-to-r from-[#0097b2] to-[#7ed957] absolute inset-0 opacity-[0.68] z-0"></div>
+                <div onClick={() => setSeeMoreCocoFarm(s => !s)} className='cursor-pointer flex items-center absolute top-[-60px] right-0 left-0 md:top-[-45px] sm:top-[-30px] z-[1]'>
+                    <div className='flex items-center bg-white border-[#00552c] border-[3px] rounded-[45px] px-[75px] py-[4px] w-fit mx-auto text-center sm:px-[40px]'>
+                        <p className='font-frank text-white text-[70px] text-line-[2.5px_#00552c] tracking-[-3px] md:text-[50px] md:text-line-[1.3px_#00552c] sm:text-[30px] sm:text-line-[1px_#00552c]'>COCO FARM</p>
+                        <div className={`ml-[20px] ${seeMoreCocoFarm ? styles['triangle-up'] : styles['triangle-down']} bg-[#00552c] w-[30px] h-[27px] b-[7px] sm:w-[20px] sm:h-[15px] sm:b-[4px] ml-[10px]`}></div>
+                    </div>
+                </div>
+                <div className="relative max-w-5xl mx-auto px-[20px]">
+                    <div className="flex pt-[100px] sm:pt-[70px] gap-[50px] sm:gap-[17px] md:gap-[30px]">
+                        <div className="w-[30%]">
+                            <ImageCustom src="/img/s.svg" />
+                        </div>
+                        <div className="flex-1 relative">
+                            <img src="/img/chat1.png" />
+                            <div className="absolute top-[16%] left-[8%] w-[85%] text-[30px] md:text-[23px] sm:text-[10px] esm:text-[16px] font-sriracha">
+                                Nằm ngay Phà Cát Lái, cách phà Cát Lái chỉ 5 phút lái xe. Bạn có thể Seach GG MAP từ khoá “Coco Garden Đồng Nai".
+                                <br />
+                                <br />
+                                Hoặc bấm vào Coco để xem vị trí nhaaa !
+                            </div>
+                        </div>
+                    </div>
+                    <SeeMore expanded={seeMoreCocoFarm}>
+                        <div>
+                        </div>
+                    </SeeMore>
+                </div>
+            </div>
+            <div className="max-w-5xl mx-auto py-[30px] sm:pt-0">
+                <div className="flex gap-[20px] sm:flex-col sm:gap-[5px]">
+                    <div className="flex-1 border-[1px] border-[#00552c]">
+                        <ImageCustom src="/img/how_to_book.webp" />
+                    </div>
+                    <div className="flex-1 border-[1px] border-[#00552c]">
+                        <ImageCustom src="/img/rule.webp" />
+                    </div>
+                </div>
+                <div className="text-center font-paytone text-[#ffde59] text-line-[1px_#000] text-[60px] my-[20px] sm:text-[30px]">CÂU HỎI THƯỜNG GẶP</div>
+                <div className="w-fit mx-auto px-[10px]">
+                    {QUESTIONS.map((item, index) => (
+                        <div key={index} className="flex gap-[20px] text-[27px] sm:text-[15px] sm:gap-[10px] justify-center mt-[15px] relative">
+                            <div className="w-[50px] cursor-pointer sm:w-[30px]" onClick={() => setItemOpen(index)}>
+                                <ImageCustom src="/img/chat3.svg" />
+                            </div>
+                            <div className="flex-1 font-sriracha text-[#00552c]">{item.q}</div>
+                            <div data-id={index} dangerouslySetInnerHTML={{ __html: item.a }} className={`${index == itemOpen ? 'opacity-[1] z-[1000]' : 'opacity-[0] transition-none'} transition duration-[.4s] ease px-[20px] py-[10px] rounded-[30px] absolute top-[103%] bg-gradient-to-r from-[#0097b2] to-[#7ed957] border-[2px] border-black text-white text-line-[0.5px_#000] font-sriracha whitespace-pre-line`}>
+
+                            </div>
+                        </div>
+                    ))}
+                </div>
+                <div className="relative sm:mt-[10px] md:px-[3px] px-[20px] mb-[15px]">
+                    <div>
+                        <ImageCustom src="/img/chat4.png" />
+                    </div>
+                    <div className="absolute top-[20%] left-[33%] text-white font-sriracha w-[60%] text-[25px] sm:top-[15%] sm:text-[11px]">
+                        Bạn bấm vào <div className="w-[30px] sm:w-[20px] inline-block"><ImageCustom src="/img/chat5.svg" /></div> để xem câu trả lời nhaaa.
+                        Nếu bạn có câu hỏi nào khác, hãy liên hệ Coco qua MXH này nhé..!
+                    </div>
+                    <div className="flex absolute top-[90%] left-[47%] gap-[20px] sm:gap-[10px]">
+                        <Link href="https://www.facebook.com/cocogardendn" target="_blank" className="w-[50px] h-[50px] sm:w-[30px] sm:h-[30px]">
+                            <ImageCustom src="/img/facebook.svg" />
+                        </Link>
+                        <Link href="https://www.instagram.com/cocogarden.dn/" target="_blank" className="w-[50px] h-[50px] sm:w-[30px] sm:h-[30px]">
+                            <ImageCustom src="/img/instagram.png" />
+                        </Link>
+                        <Link href="tel:+84941252218" target="_blank" className="w-[50px] h-[50px] sm:w-[30px] sm:h-[30px]">
+                            <ImageCustom src="/img/call.webp" />
+
+                        </Link>
+                        <Link href="https://www.tiktok.com/@cocogarden.dn" target="_blank" className="w-[50px] h-[50px] sm:w-[30px] sm:h-[30px] relative">
+                            <ImageCustom src="/img/tiktok.webp" height="100%" objectFit="contain"/>
+                        </Link>
+                    </div>
+                </div>
+            </div>
+            <Lightbox
+                open={openLightBox}
+                close={() => setOpenLightBox(false)}
+                slides={slides}
+                counter={{ container: { style: { top: 0, bottom: 'unset' } } }}
+                plugins={[Thumbnails, Video, Counter]}
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+        </div >
+    )
 }
+
+
+
+export default HomePage

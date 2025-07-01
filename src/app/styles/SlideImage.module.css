@@ -1,0 +1,26 @@
+.swiper-pagination-bullet {
+  background-color: #fff;
+  /* Màu mặc định */
+  width: 10px;
+  /* Chiều rộng */
+  height: 10px;
+  /* Chiều cao */
+  margin: 0 2px !important;
+  /* Khoảng cách giữa các nút */
+  opacity: 1;
+  /* Đảm bảo luôn hiển thị */
+  cursor: pointer;
+}
+
+.swiper-pagination-bullet-active {
+  background-image: linear-gradient(to right, #5de0e6, #004aad);
+  /* Màu khi được active */
+  transform: scale(1.2);
+  /* Phóng to nút */
+}
+
+/* Thêm hiệu ứng hover */
+.swiper-pagination-bullet:hover {
+  background-image: linear-gradient(to right, #5de0e6, #004aad);
+  /* Màu khi hover */
+}
