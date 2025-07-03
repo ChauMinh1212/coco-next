@@ -7,6 +7,7 @@ interface IImageProps {
     objectFit?: Property.ObjectFit
     width?: string
     height?: string
+    unoptimized?: boolean
 }
 
 const ImageCustom = (props: IImageProps) => {
@@ -18,10 +19,11 @@ const ImageCustom = (props: IImageProps) => {
             height={0}
             sizes="100vw"
             style={{
-                width: '100%',
+                width: props?.width || '100%',
                 height: props?.height || 'auto',
-                objectFit: props?.objectFit || 'cover'
+                objectFit: props?.objectFit || 'cover',
             }}
+            unoptimized={props?.unoptimized || false}
         ></Image>
     )
 }

@@ -1,3 +1,5 @@
+import ImageCustom from "../common/Image"
+
 const Footer = () => {
     return (
         <div className="relative">
@@ -13,7 +15,7 @@ const Footer = () => {
                     <div className='flex'>
                         <p className='font-frank text-white text-[50px] text-line-[1.5px_rgb(0,0,0)] md:text-[40px] sm:text-[40px]'>COCO</p>
                         <div className='w-[43px] md:w-[36px]'>
-                            <img src="/img/coconut.gif" alt="" loading="lazy" />
+                            <ImageCustom src="/img/coconut.gif" alt="" unoptimized={true}/>
                         </div>
                     </div>
                     <p className='font-frank text-[#ffde59] text-[50px] text-line-[1.5px_rgb(0,0,0)] mt-[-20px] sm:mt-[-20px] md:text-[40px] sm:text-[40px]'>GARDEN</p>

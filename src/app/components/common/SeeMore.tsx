@@ -4,7 +4,7 @@ import { ReactNode, useEffect, useRef, useState } from "react"
 
 type SeeMoreProps = {
     children: ReactNode,
-    expanded: Boolean
+    expanded: boolean
 }
 
 const SeeMore = ({

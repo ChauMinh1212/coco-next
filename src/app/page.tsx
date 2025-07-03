@@ -1,5 +1,11 @@
 'use client'
-import { useEffect, useRef, useState } from "react";
+import ImageCustom from "@/app/components/common/Image";
+import SeeMore from "@/app/components/common/SeeMore";
+import SlideImg from "@/app/components/common/SlideImage";
+import { IMG_SPACE_COMMON, QUESTIONS, ROOMS, SERVICES } from "@/app/constants/common.constant";
+import styles from "@/app/styles/HomePage.module.css";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 import { Lightbox } from "yet-another-react-lightbox";
 import Counter from "yet-another-react-lightbox/plugins/counter";
 import "yet-another-react-lightbox/plugins/counter.css";
@@ -7,17 +13,12 @@ import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 import Video from "yet-another-react-lightbox/plugins/video";
 import "yet-another-react-lightbox/styles.css";
-import { IMG_SPACE_COMMON, QUESTIONS, ROOMS, SERVICES } from "@/app/constants/common";
-import styles from "@/app/styles/HomePage.module.css";
-import Link from "next/link";
-import ImageCustom from "@/app/components/common/Image";
-import SeeMore from "@/app/components/common/SeeMore";
-import SlideImg from "@/app/components/common/SlideImage";
+import NextJsImage from "./components/common/LightBoxImage";
 
 const HomePage = () => {
-    const [itemOpen, setItemOpen] = useState<null | number>(null)
+    const [itemOpen, setItemOpen] = useState<number | null>(null)
     const [openLightBox, setOpenLightBox] = useState(false);
-    const [slides, setSlides] = useState<any>([])
+    const [slides, setSlides] = useState<any[]>([])
 
     const [seeMore, setSeeMore] = useState(false)
     const [seeMoreCocoHabour, setSeeMoreCocoHabour] = useState(true)
@@ -70,7 +71,9 @@ const HomePage = () => {
                             {
                                 SERVICES.map((item, index) => (
                                     <div key={index} className='flex flex-[50%] items-center py-[7px]'>
-                                        <img loading="lazy" src={item.src} alt="" className='h-[60px] w-[60px] sm:h-[20px] sm:w-[20px] object-contain mr-[20px] sm:mr-[5px]' />
+                                        <div className="h-[60px] w-[60px] sm:h-[20px] sm:w-[20px] mr-[20px] sm:mr-[5px]">
+                                            <ImageCustom src={item.src} alt="" objectFit="contain" />
+                                        </div>
                                         <p className='font-sriracha text-[#00552c] text-[30px] sm:text-[12px] md:text-[23px]'>{item.name}</p>
                                     </div>
                                 ))
@@ -79,12 +82,16 @@ const HomePage = () => {
                     </div>
                     <div className='text-center mt-[20px] relative max-w-5xl mx-auto'>
                         <p className='font-baloo font-bold text-line-[1px_#000] text-[40px] text-white md:text-[30px] sm:text-[20px]'>và hơn thế nữa..</p>
-                        <img src="/img/smile.webp" alt="" className="w-[175px] sm:w-[80px] rotate-[12deg] absolute top-[40%] translate-y-[-60%] right-[2%]" loading="lazy" />
+                        <div className="w-[175px] md:w-[110px] sm:w-[80px] rotate-[12deg] absolute top-[40%] translate-y-[-60%] right-[2%]">
+                            <ImageCustom src="/img/smile.webp" alt="" />
+                        </div>
                     </div>
                     <div className='max-w-7xl mx-auto px-[10px]'>
                         <div className='text-[30px] sm:text-[12px] md:text-[23px] font-sriracha max-w-4xl mx-auto rounded-[40px] bg-white py-[10px] pl-[50px] sm:pl-[20px] pr-[10px] sm:pr-[5px]'>
-                            <div className="flex gap-[20px]">
-                                <img loading="lazy" src="/img/i.png" alt="" className="w-[100px] sm:w-[70px] object-contain" />
+                            <div className="flex gap-[20px] items-center">
+                                <div className="w-[420px] md:w-[300px] sm:w-[215px]">
+                                    <ImageCustom src="/img/i.png" alt="" objectFit="contain" />
+                                </div>
                                 <p>Chào mừng Quý khách đến với COCO GARDEN 🌴 – một điểm đến lý tưởng để bạn có thể thư giãn và hoà mình vào thiên nhiên xanh mát, vị trí ngay sát Sài Gòn, chỉ 5 phút đi xe qua phà Cát Lái
                                 </p>
                             </div>
@@ -101,7 +108,7 @@ const HomePage = () => {
                                         <br />
                                         - Hệ thống HOMESTAY với thiết kế 3 mặt giáp sông, cho bạn cảm giác yên bình tuyệt đối. Cùng cây cầu dài 50 mét, đặt giữa lòng sông. Giúp bạn tận hưởng từng làn gió mát từ sông, ngắm nhìn hoàng hôn thơ mộng cùng với những âm thanh thiên nhiên êm ả.
                                         <br />
-                                        - Sắp triển khai: khu Camping, BBQ, đốt lửa trại, hồ bơi,... Đặc biệt phù hợp cho các gia đình, cặp đôi hay nhóm bạn đang muốn “chữa lành” và thoát ra khỏi nhịp sống hối hả.
+                                        - Sắp triển khai: khu Camping, BBQ, đốt lửa trại, hồ bơi,... Đặc biệt phù hợp cho các gia đình, cặp đôi hay nhóm bạn đang muốn &quot;chữa lành&quot; và thoát ra khỏi nhịp sống hối hả.
                                         <br />
                                         <br />
                                         2. Khu COCO FARM: tổ hợp thiên nhiên, nơi bạn có thể khám phá vườn thú, chèo thuyền kayak, hoặc thư giãn giữa những vườn cây xanh rợp bóng mát.
@@ -135,13 +142,13 @@ const HomePage = () => {
                 </div>
                 <div className="max-w-5xl mx-auto px-[20px] relative">
                     <div className="flex pt-[100px] sm:pt-[70px] gap-[50px] sm:gap-[17px] md:gap-[30px]">
-                        <div className="w-[30%]">
+                        <Link prefetch={false} href="https://maps.app.goo.gl/pgvLoQA7wVV4ECJ69" className="w-[30%]" target="_blank">
                             <ImageCustom src="/img/s.svg" alt="" />
-                        </div>
+                        </Link>
                         <div className="flex-1 relative">
                             <ImageCustom src="/img/chat1.png" alt="" />
                             <div className="absolute top-[16%] left-[8%] w-[85%] text-[30px] md:text-[23px] sm:text-[10px] esm:text-[16px] font-sriracha">
-                                Nằm ngay Phà Cát Lái, cách phà Cát Lái chỉ 5 phút lái xe. Bạn có thể Seach GG MAP từ khoá “Coco Garden Đồng Nai".
+                                Nằm ngay Phà Cát Lái, cách phà Cát Lái chỉ 5 phút lái xe. Bạn có thể Seach GG MAP từ khoá &quot;Coco Garden Đồng Nai&quot;.
                                 <br />
                                 <br />
                                 Hoặc bấm vào Coco để xem vị trí nhaaa !
@@ -158,7 +165,9 @@ const HomePage = () => {
                                 {ROOMS.map((item, index) => (
                                     <div key={index} className="flex esm:flex-col bg-white font-sriracha text-[23px] sm:text-[13px] rounded-[20px]">
                                         <div onClick={() => { setOpenLightBox(true); setSlides(item.img) }} className="cursor-pointer flex-1 border-[3px] border-[#00552c] rounded-[20px] overflow-hidden aspect-[1/1]">
-                                            <img loading="lazy" src={item.img[0].src} alt="" className="object-cover object-center h-full w-full" />
+                                            <div className="h-full w-full">
+                                                <ImageCustom src={item.img[0]?.src || '/img/default.jpg'} alt="" objectFit="cover" height="100%"/>
+                                            </div>
                                         </div>
                                         <div className="flex-1 md:w-full p-[20px] sm:p-[10px] flex flex-col justify-between">
                                             <div>
@@ -193,13 +202,13 @@ const HomePage = () => {
                 </div>
                 <div className="relative max-w-5xl mx-auto px-[20px]">
                     <div className="flex pt-[100px] sm:pt-[70px] gap-[50px] sm:gap-[17px] md:gap-[30px]">
-                        <div className="w-[30%]">
-                            <ImageCustom src="/img/s.svg" />
-                        </div>
+                        <Link href="/coco-garden-sg" className="w-[30%]">
+                            <ImageCustom src="/img/s.svg" alt="" />
+                        </Link>
                         <div className="flex-1 relative">
-                            <img src="/img/chat1.png" />
+                            <ImageCustom src="/img/chat1.png" alt="" />
                             <div className="absolute top-[16%] left-[8%] w-[85%] text-[30px] md:text-[23px] sm:text-[10px] esm:text-[16px] font-sriracha">
-                                Nằm ngay Phà Cát Lái, cách phà Cát Lái chỉ 5 phút lái xe. Bạn có thể Seach GG MAP từ khoá “Coco Garden Đồng Nai".
+                                Nằm ngay Phà Cát Lái, cách phà Cát Lái chỉ 5 phút lái xe. Bạn có thể Seach GG MAP từ khoá &quot;Coco Garden Đồng Nai&quot;.
                                 <br />
                                 <br />
                                 Hoặc bấm vào Coco để xem vị trí nhaaa !
@@ -244,18 +253,18 @@ const HomePage = () => {
                         Nếu bạn có câu hỏi nào khác, hãy liên hệ Coco qua MXH này nhé..!
                     </div>
                     <div className="flex absolute top-[90%] left-[47%] gap-[20px] sm:gap-[10px]">
-                        <Link href="https://www.facebook.com/cocogardendn" target="_blank" className="w-[50px] h-[50px] sm:w-[30px] sm:h-[30px]">
+                        <Link prefetch={false} href="https://www.facebook.com/cocogardendn" target="_blank" className="w-[50px] h-[50px] sm:w-[30px] sm:h-[30px]">
                             <ImageCustom src="/img/facebook.svg" />
                         </Link>
-                        <Link href="https://www.instagram.com/cocogarden.dn/" target="_blank" className="w-[50px] h-[50px] sm:w-[30px] sm:h-[30px]">
+                        <Link prefetch={false} href="https://www.instagram.com/cocogarden.dn/" target="_blank" className="w-[50px] h-[50px] sm:w-[30px] sm:h-[30px]">
                             <ImageCustom src="/img/instagram.png" />
                         </Link>
-                        <Link href="tel:+84941252218" target="_blank" className="w-[50px] h-[50px] sm:w-[30px] sm:h-[30px]">
+                        <Link prefetch={false} href="tel:+84941252218" target="_blank" className="w-[50px] h-[50px] sm:w-[30px] sm:h-[30px]">
                             <ImageCustom src="/img/call.webp" />
 
                         </Link>
-                        <Link href="https://www.tiktok.com/@cocogarden.dn" target="_blank" className="w-[50px] h-[50px] sm:w-[30px] sm:h-[30px] relative">
-                            <ImageCustom src="/img/tiktok.webp" height="100%" objectFit="contain"/>
+                        <Link prefetch={false} href="https://www.tiktok.com/@cocogarden.dn" target="_blank" className="w-[50px] h-[50px] sm:w-[30px] sm:h-[30px] relative">
+                            <ImageCustom src="/img/tiktok.webp" height="100%" objectFit="contain" />
                         </Link>
                     </div>
                 </div>
@@ -264,6 +273,7 @@ const HomePage = () => {
                 open={openLightBox}
                 close={() => setOpenLightBox(false)}
                 slides={slides}
+                render={{ slide: NextJsImage }}
                 counter={{ container: { style: { top: 0, bottom: 'unset' } } }}
                 plugins={[Thumbnails, Video, Counter]}
             />

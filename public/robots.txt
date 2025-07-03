@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://cocogarden.vn
+
+# Sitemaps
+Sitemap: https://cocogarden.vn/sitemap.xml

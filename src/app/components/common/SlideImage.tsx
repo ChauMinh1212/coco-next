@@ -3,12 +3,24 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import styles from "@/app/styles/SlideImage.module.css";
+import ImageCustom from './Image';
 
-const SlideImg = (props: { img?: string[] }) => {
+interface ISlideImgProps {
+    img: {
+        src: string
+        type: string | 'img' | 'video'
+    }[]
+}
+
+const SlideImg = (props: ISlideImgProps) => {
     const { img } = props
     return (
-        <div className='flex justify-center relative mb-[20px]'>
+        <div className='
+        flex 
+        justify-center 
+        relative 
+        mb-[20px]
+        '>
             <Swiper
                 loop={true}
                 navigation={true}
@@ -26,7 +38,17 @@ const SlideImg = (props: { img?: string[] }) => {
                     }`}
             >
                 {img?.map((item, index) => (
-                    <SwiperSlide key={index}><div className={`bg-no-repeat bg-contain bg-center w-full h-full`} style={{ backgroundImage: `url(${item})` }}></div></SwiperSlide>
+                    <SwiperSlide key={index}>
+                        <div className='w-full h-full'>
+                            {item.type == 'img' && (
+                                <ImageCustom src={item.src} alt="" objectFit='contain' height='100%' />
+                            )}
+                            {item.type == 'video' && (
+                                <video src={item.src} autoPlay muted loop className='h-full w-full object-contain'></video>
+                            )}
+                        </div>
+
+                    </SwiperSlide>
                 ))}
             </Swiper>
         </div>

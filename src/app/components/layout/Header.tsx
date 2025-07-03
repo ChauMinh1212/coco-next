@@ -7,9 +7,10 @@ import { useState } from "react";
 import { FaPhoneAlt } from "react-icons/fa";
 import { IoIosMail } from "react-icons/io";
 import NavLink from "@/app/components/layout/NavLink";
+import ImageCustom from "../common/Image";
 
 const styleMenu = {
-    position: 'absolute' as 'absolute',
+    position: 'absolute' as const,
     top: 0,
     left: 0,
     width: '100%',
@@ -44,15 +45,18 @@ const Header = () => {
                             </IconButton>
                             <Link href="/" className="relative ml-[10px] sm:ml-[5px]">
                                 <p className="font-frank font-bold text-white text-line-[0.2px_#000]">COCO <span className="text-[#ffde59]">GARDEN</span></p>
-                                <img src="/img/coconut.gif" alt="" className="absolute w-[30px] sm:w-[15px] top-0 sm:top-[10%] right-[-15%]" loading="lazy" />
+                                <div className="absolute w-[30px] sm:w-[15px] top-0 sm:top-[10%] right-[-15%]">
+                                    <ImageCustom src="/img/coconut.gif" alt=""/>
+                                </div>
+
                             </Link>
                         </div>
                         <div>
-                            <a href="https://www.facebook.com/cocogardendn" target={"_blank"}>
+                            <Link prefetch={false} href="https://www.facebook.com/cocogardendn" target={"_blank"}>
                                 <div className="text-[#00552c] font-baloo bg-white border-[#00552c] border-[2px] rounded-[15px] text-shadow-none p-[5px_20px] sm:text-[15px] md:text-[25px]">
                                     Đặt phòng
                                 </div>
-                            </a>
+                            </Link>
                         </div>
                     </div>
                     <div className="text-shadow-header font-notosan md:hidden h-[66px] max-w-7xl mx-auto flex flex-1 text-center lg:text-[15px] text-[19px]">
@@ -62,11 +66,11 @@ const Header = () => {
                         <NavLink href="/event">CHƯƠNG TRÌNH</NavLink>
                         <NavLink href="/contact">LIÊN HỆ</NavLink>
                         <div className="flex-1 header-hover hover:text-[rgb(255,236,157)] flex items-center justify-center ">
-                            <a href="https://www.facebook.com/cocogardendn" target={"_blank"}>
+                            <Link prefetch={false} href="https://www.facebook.com/cocogardendn" target={"_blank"}>
                                 <div className="text-[#00552c] font-baloo bg-white border-[#00552c] border-[2px] rounded-[15px] text-shadow-none p-[5px_20px]">
                                     Đặt phòng
                                 </div>
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>
