@@ -22,45 +22,68 @@
   font-weight: 400;
   src: local('DejaVu Serif'), url('https://fonts.cdnfonts.com/s/109/DejaVuSerif.woff') format('woff');
 }
+
 @font-face {
   font-family: 'DejaVu Serif';
   font-style: italic;
   font-weight: 400;
   src: local('DejaVu Serif'), url('https://fonts.cdnfonts.com/s/109/DejaVuSerif-Italic.woff') format('woff');
 }
+
 @font-face {
   font-family: 'DejaVu Serif';
   font-style: normal;
   font-weight: 700;
   src: local('DejaVu Serif'), url('https://fonts.cdnfonts.com/s/109/DejaVuSerif-Bold.woff') format('woff');
 }
+
 @font-face {
   font-family: 'DejaVu Serif';
   font-style: italic;
   font-weight: 700;
   src: local('DejaVu Serif'), url('https://fonts.cdnfonts.com/s/109/DejaVuSerif-BoldItalic.woff') format('woff');
 }
+
 @font-face {
   font-family: 'DejaVu Serif Condensed';
   font-style: normal;
   font-weight: 400;
   src: local('DejaVu Serif Condensed'), url('https://fonts.cdnfonts.com/s/109/DejaVuSerifCondensed.woff') format('woff');
 }
+
 @font-face {
   font-family: 'DejaVu Serif Condensed';
   font-style: italic;
   font-weight: 400;
   src: local('DejaVu Serif Condensed'), url('https://fonts.cdnfonts.com/s/109/DejaVuSerifCondensed-Italic.woff') format('woff');
 }
+
 @font-face {
   font-family: 'DejaVu Serif Condensed';
   font-style: normal;
   font-weight: 700;
   src: local('DejaVu Serif Condensed'), url('https://fonts.cdnfonts.com/s/109/DejaVuSerifCondensed-Bold.woff') format('woff');
 }
+
 @font-face {
   font-family: 'DejaVu Serif Condensed';
   font-style: italic;
   font-weight: 700;
   src: local('DejaVu Serif Condensed'), url('https://fonts.cdnfonts.com/s/109/DejaVuSerifCondensed-BoldItalic.woff') format('woff');
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #fff !important;
+  width: 20px !important;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 23px !important;
+  font-weight: bold;
+}
+
+.swiper-pagination-bullet-active, .swiper-pagination-bullet {
+  background-color: #fff !important;
 }

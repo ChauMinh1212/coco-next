@@ -6,19 +6,9 @@ import { IMG_SPACE_COMMON, QUESTIONS, ROOMS, SERVICES } from "@/app/constants/co
 import styles from "@/app/styles/HomePage.module.css";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { Lightbox } from "yet-another-react-lightbox";
-import Counter from "yet-another-react-lightbox/plugins/counter";
-import "yet-another-react-lightbox/plugins/counter.css";
-import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
-import "yet-another-react-lightbox/plugins/thumbnails.css";
-import Video from "yet-another-react-lightbox/plugins/video";
-import "yet-another-react-lightbox/styles.css";
-import NextJsImage from "./components/common/LightBoxImage";
 
 const HomePage = () => {
     const [itemOpen, setItemOpen] = useState<number | null>(null)
-    const [openLightBox, setOpenLightBox] = useState(false);
-    const [slides, setSlides] = useState<any[]>([])
 
     const [seeMore, setSeeMore] = useState(false)
     const [seeMoreCocoHabour, setSeeMoreCocoHabour] = useState(true)
@@ -43,7 +33,7 @@ const HomePage = () => {
             {/* Mới */}
             <div className='bg-[url("/img/bg1.png")] bg-cover bg-no-repeat pb-[120px] sm:pb-[80px]'>
                 <div className='max-w-7xl mx-auto'>
-                    <ImageCustom src="/img/top1.svg" alt="top" />
+                    <ImageCustom src="/img/top1.png" alt="top" />
                     <div className='relative mt-[-30px]'>
                         <div className='w-[70%] mx-auto sm:w-[90%]'>
                             <ImageCustom src="/img/chat2.png" alt="bot" />
@@ -159,14 +149,14 @@ const HomePage = () => {
                         <div>
                             <div className="mt-[30px]">
                                 <p className="text-center font-baloo text-[45px] md:text-[30px] sm:text-[20px] text-white text-line-[1px_#000]">KHÔNG GIAN CHUNG</p>
-                                <SlideImg img={IMG_SPACE_COMMON}></SlideImg>
+                                <SlideImg img={IMG_SPACE_COMMON} className="max-w-5xl w-full aspect-[5/2] md:aspect-[4/2] sm:aspect-[1/1] border-white border-[3px] rounded-[30px] bg-black"></SlideImg>
                             </div>
                             <div className="mt-[60px] sm:mt-[20px] flex flex-col gap-[30px]">
                                 {ROOMS.map((item, index) => (
                                     <div key={index} className="flex esm:flex-col bg-white font-sriracha text-[23px] sm:text-[13px] rounded-[20px]">
-                                        <div onClick={() => { setOpenLightBox(true); setSlides(item.img) }} className="cursor-pointer flex-1 border-[3px] border-[#00552c] rounded-[20px] overflow-hidden aspect-[1/1]">
+                                        <div className="cursor-pointer flex-1 border-[3px] border-[#00552c] rounded-[20px] overflow-hidden aspect-[1/1.1]">
                                             <div className="h-full w-full">
-                                                <ImageCustom src={item.img[0]?.src || '/img/default.jpg'} alt="" objectFit="cover" height="100%"/>
+                                                <SlideImg img={item.img.length != 0 ? item.img : [{src: '/img/default.jpg'}]} className="w-full h-full" objectFit="cover"/>
                                             </div>
                                         </div>
                                         <div className="flex-1 md:w-full p-[20px] sm:p-[10px] flex flex-col justify-between">
@@ -269,14 +259,14 @@ const HomePage = () => {
                     </div>
                 </div>
             </div>
-            <Lightbox
+            {/* <Lightbox
                 open={openLightBox}
                 close={() => setOpenLightBox(false)}
                 slides={slides}
                 render={{ slide: NextJsImage }}
                 counter={{ container: { style: { top: 0, bottom: 'unset' } } }}
                 plugins={[Thumbnails, Video, Counter]}
-            />
+            /> */}
         </div >
     )
 }
