@@ -5,14 +5,13 @@ import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import ImageCustom from './Image';
 
+import { useState } from 'react';
+import Lightbox from 'yet-another-react-lightbox';
+import { Counter, Thumbnails, Video } from 'yet-another-react-lightbox/plugins';
 import "yet-another-react-lightbox/plugins/counter.css";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 import "yet-another-react-lightbox/styles.css";
-import Lightbox from 'yet-another-react-lightbox';
-import { Counter, Thumbnails, Video } from 'yet-another-react-lightbox/plugins';
 import NextJsImage from './LightBoxImage';
-import { useEffect, useState } from 'react';
-import { log } from 'console';
 interface ISlideImgProps {
     img: {
         src: string
@@ -31,14 +30,14 @@ const SlideImg = (props: ISlideImgProps) => {
     const [openLightBox, setOpenLightBox] = useState(false)
     const [slides, setSlides] = useState<any[]>([])
 
-    const handleOpenLightBox = () => {
+    const handleOpenLightBox = (index: number) => {
         setOpenLightBox(true)
         const newSlides = img.map((item) => ({
             src: item.src,
             ...(item.type == 'video' && { type: item.type }),
             ...(item.type == 'video' && { sources: item.sources })
         }))
-        setSlides(newSlides)
+        setSlides([...newSlides.slice(index), ...newSlides.slice(0, index)])
     }
 
     return (
@@ -54,8 +53,8 @@ const SlideImg = (props: ISlideImgProps) => {
             className={className}
         >
             {img?.map((item, index) => (
-                <SwiperSlide onClick={handleOpenLightBox} key={index}>
-                    <div className='w-full h-full'>
+                <SwiperSlide onClick={() => handleOpenLightBox(index)} key={index}>
+                    <div className='w-full h-full cursor-pointer'>
                         {!item?.type && (
                             <ImageCustom src={item.src} alt="" objectFit={props?.objectFit || 'contain'} height='100%' />
                         )}

@@ -154,7 +154,7 @@ const HomePage = () => {
                             <div className="mt-[60px] sm:mt-[20px] flex flex-col gap-[30px]">
                                 {ROOMS.map((item, index) => (
                                     <div key={index} className="flex esm:flex-col bg-white font-sriracha text-[23px] sm:text-[13px] rounded-[20px]">
-                                        <div className="cursor-pointer flex-1 border-[3px] border-[#00552c] rounded-[20px] overflow-hidden aspect-[1/1.1]">
+                                        <div className="flex-1 border-[3px] border-[#00552c] rounded-[20px] overflow-hidden aspect-[1/1.1]">
                                             <div className="h-full w-full">
                                                 <SlideImg img={item.img.length != 0 ? item.img : [{src: '/img/default.jpg'}]} className="w-full h-full" objectFit="cover"/>
                                             </div>
