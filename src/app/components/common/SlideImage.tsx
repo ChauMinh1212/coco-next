@@ -59,7 +59,7 @@ const SlideImg = (props: ISlideImgProps) => {
                             <ImageCustom src={item.src} alt="" objectFit={props?.objectFit || 'contain'} height='100%' />
                         )}
                         {item.type == 'video' && (
-                            <video src={item.src} autoPlay muted loop className='h-full w-full object-contain'></video>
+                            <video src={item.sources[0].src} autoPlay muted loop className='h-full w-full object-contain' />
                         )}
                     </div>
                 </SwiperSlide>
