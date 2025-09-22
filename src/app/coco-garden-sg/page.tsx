@@ -2,26 +2,8 @@
 
 import { HowToBook, ImageCustom, Question, RoomSG } from "@/lib/components/common";
 import { ROOMS_SG } from "@/lib/data";
-import { useState } from "react";
 
 const CocoGardenSgPage = () => {
-    const [collapsedSections, setCollapsedSections] = useState<{ [key: string]: boolean }>({
-        basicHome: false,
-        d11: false,
-        d12: false,
-        d21: false,
-        d22: false,
-        d31: false,
-        d32: false,
-    });
-
-    const toggleSection = (sectionKey: string) => {
-        setCollapsedSections(prev => ({
-            ...prev,
-            [sectionKey]: !prev[sectionKey]
-        }));
-    };
-
     return (
         <div className="max-w-4xl mx-auto px-[10px] py-[20px] lg:py-[40px] font-dejavu space-y-6 md:space-y-8">
             {ROOMS_SG.map((room, index) => (

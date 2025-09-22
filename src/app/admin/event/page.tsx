@@ -51,13 +51,12 @@ export default function AdminEventPage() {
         sort: 0
     });
 
-    const ADMIN_PASSWORD = process.env.NEXT_PUBLIC_ADMIN_PASSWORD;
-
     useEffect(() => {
+        const adminPassword = process.env.NEXT_PUBLIC_ADMIN_PASSWORD;
         const password = window.prompt("Vui lòng nhập mật khẩu admin:");
         if (
             password &&
-            password === ADMIN_PASSWORD
+            password === adminPassword
         ) {
             setIsAuth(true);
         } else {

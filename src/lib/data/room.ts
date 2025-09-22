@@ -1,4 +1,4 @@
-import { IRoom, IRoomSG } from "../interface/room";
+import { IRoom } from "../interface/room";
 
 export const ROOMS: IRoom[] = [
   {
