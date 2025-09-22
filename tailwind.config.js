@@ -7,12 +7,12 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx,mdx}"
   ],
   theme: {
-    screens: {
-      lg: { max: "1024px" },
-      md: { max: "970px" },
-      esm: {max: "760px"},
-      sm: { max: "480px" },
-    },
+    // screens: {
+    //   lg: { max: "1024px" },
+    //   md: { max: "970px" },
+    //   esm: {max: "760px"},
+    //   sm: { max: "480px" },
+    // },
     extend: {
       fontFamily: {
         primary: ["Arimo", "serif"],
@@ -26,7 +26,8 @@ module.exports = {
         libre: ["Libre Franklin", "sans-serif"],
         paytone: ["Paytone One", "sans-serif"],
         baloo: ["Baloo", "sans-serif"],
-        sriracha: ["Sriracha", "cursive"]
+        sriracha: ["Sriracha", "cursive"],
+        arimo: ["Arimo", "sans-serif"]
       },
 
       colors: {

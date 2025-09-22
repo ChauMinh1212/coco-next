@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import "./globals.css";
-import { arimo, bungee, libre, notosan, sriracha,  } from "@/app/font";
-import Header from "@/app/components/layout/Header";
-import Footer from "@/app/components/layout/Footer";
+import { arimo, bungee, libre, notosan, sriracha, } from "@/lib/font";
+import "@/lib/style/globals.css";
+import { Header, Footer } from "@/lib/components/layout";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://cocogarden.vn'),
@@ -42,7 +41,7 @@ export default function RootLayout({
           `}
       >
         <Header></Header>
-        <main className="flex-1 relative pt-[98px]">
+        <main className="flex-1 relative pt-[82px] sm:pt-[85px]">
           {children}
         </main>
         <Footer></Footer>

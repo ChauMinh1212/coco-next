@@ -24,11 +24,16 @@ const SeeMore = ({
         <div
             ref={contentRef}
             style={{ maxHeight: height }}
-            className={`overflow-hidden transition-max-height duration-300 ease-in-out`}
+            className={`
+                overflow-hidden 
+                transition-max-height 
+                duration-300 
+                ease-in-out
+            `}
         >
             {children}
         </div>
     )
 }
 
-export default SeeMore
+export { SeeMore }

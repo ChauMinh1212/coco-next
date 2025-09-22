@@ -84,6 +84,50 @@
   font-weight: bold;
 }
 
-.swiper-pagination-bullet-active, .swiper-pagination-bullet {
+.swiper-pagination-bullet-active,
+.swiper-pagination-bullet {
   background-color: #fff !important;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+.animate-fadein {
+  opacity: 0;
+  animation: fadeInImg 1s ease-in forwards;
+}
+@keyframes fadeInImg {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-5px); }
+  40% { transform: translateX(5px); }
+  60% { transform: translateX(-5px); }
+  80% { transform: translateX(5px); }
+  100% { transform: translateX(0); }
+}
+
+.shake {
+  animation: shake 0.8s ease-in-out infinite;
 }

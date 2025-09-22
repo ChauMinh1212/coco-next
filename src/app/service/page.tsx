@@ -1,19 +1,4 @@
-const ServiceTitle = ({ title }: { title: string }) => {
-    return (
-        <div className="text-center">
-            <p className="
-            font-paytone 
-            text-[50px] 
-            text-line-[2px_#fff] 
-            text-[#004aad] 
-            md:text-[45px] 
-            md:text-line-[1.5px_#fff]
-            sm:text-[27px]
-            sm:text-line-[1.5px_#fff]
-            ">{title}</p>
-        </div>
-    )
-}
+import { Title } from "@/lib/components/common";
 
 const service = [
     { name: 'Nước ngọt', price: '10.000 đ' },
@@ -38,27 +23,12 @@ const ServicePage = () => {
     return (
         <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-r from-[#5de0e6] to-[#004aad] opacity-[0.8]"></div>
-            <div className="max-w-5xl mx-auto px-[30px] py-[30px] relative">
+            <div className="max-w-5xl mx-auto px-[30px] py-[30px] lg:py-[40px] relative">
                 <div className="relative mt-[50px]">
-                    <div className="
-                    absolute 
-                    right-0 
-                    left-0 
-                    top-[-50px]
-                    ">
-                        <ServiceTitle title="DỊCH VỤ ĂN UỐNG" />
+                    <div className="absolute right-0 left-0 top-[-50px]">
+                        <Title title="DỊCH VỤ ĂN UỐNG" color="#004aad" lineColor="white" />
                     </div>
-                    <div className="
-                    bg-[#004aad] 
-                    border-[2px] 
-                    border-white 
-                    p-[20px] 
-                    pt-[35px] 
-                    rounded-[50px] 
-                    text-white
-                    sm:text-[13px]
-                    sm:py-[20px]
-                    ">
+                    <div className="bg-[#004aad] border-[2px] border-white p-[20px] pt-[35px] rounded-[50px] text-white text-sm sm:text-base md:text-lg py-[20px]">
                         <p className="font-semibold">Liên hệ ADMIN trực PAGE hoặc quản lí Nam (0967.387.309) để nhận MENU đồ ăn _ COCO GARDEN sẽ giúp bạn đặt và giao tại HOMESTAY nhé:</p>
                         <br />
                         <p className="">Gà nướng (7h - 19h)</p>
@@ -70,28 +40,13 @@ const ServicePage = () => {
                         <p className="font-semibold">COCO GARDEN còn tặng bạn nước đá, nước suối FREE nữa đóooo.</p>
                     </div>
                 </div>
-                <div className="relative mt-[70px]">
-                    <div className="
-                    absolute 
-                    right-0 
-                    left-0 
-                    top-[-50px]
-                    ">
-                        <ServiceTitle title="QUẦY MINI - tự động" />
+                <div className="relative mt-[70px] lg:mt-[100px]">
+                    <div className="absolute right-0 left-0 top-[-50px]">
+                        <Title title="QUẦY MINI - tự động" color="#004aad" lineColor="white" />
                     </div>
-                    <div className="
-                    bg-[#004aad] 
-                    border-[2px] 
-                    border-white 
-                    p-[20px] 
-                    pt-[35px] 
-                    rounded-[50px] 
-                    text-white
-                    sm:text-[13px]
-                    sm:py-[20px]
-                    ">
+                    <div className="bg-[#004aad] border-[2px] border-white p-[20px] pt-[35px] rounded-[50px] text-white text-sm sm:text-base md:text-lg py-[20px]">
                         <p className="font-semibold">Quầy Mini Bar tự phục vụ, ngay sảnh gồm nhiều tiện ích: </p>
-                        <div className="flex gap-[30px] justify-between mt-[20px] max-w-3xl sm:flex-col sm:gap-[10px]">
+                        <div className="flex sm:gap-[30px] sm:flex-row justify-between mt-[20px] max-w-3xl flex-col gap-[10px]">
                             {serviceChunks.map((chunk, colIdx) => (
                                 <div key={colIdx} className="flex flex-1 flex-col gap-[10px]">
                                     {chunk.map((item, rowIdx) => (
@@ -99,7 +54,7 @@ const ServicePage = () => {
                                             <div className="text-nowrap">
                                                 <p>{item.name}</p>
                                             </div>
-                                            <div className="">
+                                            <div>
                                                 <p>{item.price}</p>
                                             </div>
                                         </div>
@@ -111,7 +66,6 @@ const ServicePage = () => {
                 </div>
             </div>
         </div>
-
     )
 }
 

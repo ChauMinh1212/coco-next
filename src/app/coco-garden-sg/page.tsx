@@ -1,27 +1,42 @@
-import ImageCustom from "../components/common/Image"
+"use client"
+
+import { HowToBook, ImageCustom, Question, RoomSG } from "@/lib/components/common";
+import { ROOMS_SG } from "@/lib/data";
+import { useState } from "react";
 
 const CocoGardenSgPage = () => {
-  return (
-      <div className="max-w-5xl mx-auto px-[30px] py-[20px] font-dejavu">
-          <div className="flex items-center">
-              <div>
-                  <div className="relative flex-1 ssm:text-[15px] text-black px-[50px] md:px-[30px] sm:px-[20px] py-[10px] rounded-[20px] font-dejavu w-full overflow-hidden sm:text-[15px]">
-                      <div className="absolute inset-0 bg-gradient-to-r from-[#0097b2] to-[#7ed957] opacity-[0.77]">
-                      </div>
-                      <div className="relative font-semibold">
-                          Coco Garden Sài Gòn sẽ sớm ra mắt vào cuối tháng 12.2025 này.
-                          <br />
-                          <br />
-                          Hãy chờ chúng mình nhéeee !!!
-                      </div>
-                  </div>
-              </div>
-              <div className="w-[30%] sm:hidden flex justify-center">
-                  <ImageCustom src="/img/smile.webp" alt="" objectFit="contain" width="70%"/>
-              </div>
-          </div>
-      </div>
-  )
+    const [collapsedSections, setCollapsedSections] = useState<{ [key: string]: boolean }>({
+        basicHome: false,
+        d11: false,
+        d12: false,
+        d21: false,
+        d22: false,
+        d31: false,
+        d32: false,
+    });
+
+    const toggleSection = (sectionKey: string) => {
+        setCollapsedSections(prev => ({
+            ...prev,
+            [sectionKey]: !prev[sectionKey]
+        }));
+    };
+
+    return (
+        <div className="max-w-4xl mx-auto px-[10px] py-[20px] lg:py-[40px] font-dejavu space-y-6 md:space-y-8">
+            {ROOMS_SG.map((room, index) => (
+                <RoomSG room={room} key={index} />
+            ))}
+            <div className="max-w-xl mx-auto">
+                <ImageCustom src="/img/price.jpg" alt="coco-garden-sg" />
+            </div>
+            <div className="max-w-5xl mx-auto py-[30px] pt-0 sm:pt-[30px]">
+                <HowToBook />
+                <Question />
+            </div>
+
+        </div>
+    )
 }
 
 export default CocoGardenSgPage

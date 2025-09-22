@@ -1,9 +1,0 @@
-.triangle-up {
-    aspect-ratio: 1/cos(30deg);
-    clip-path: polygon(50% 0, 100% 100%, 0 100%, 50% 0, 50% var(--b), calc(var(--b)*cos(30deg)) calc(100% - var(--b)/2), calc(100% - var(--b)*cos(30deg)) calc(100% - var(--b)/2), 50% var(--b));
-}
-
-.triangle-down {
-    aspect-ratio: 1/cos(30deg);
-    clip-path: polygon(50% 100%, 100% 0, 0 0, 50% 100%, 50% calc(100% - var(--b)), calc(var(--b)*cos(30deg)) calc(var(--b)/2), calc(100% - var(--b)*cos(30deg)) calc(var(--b)/2), 50% calc(100% - var(--b)));
-}

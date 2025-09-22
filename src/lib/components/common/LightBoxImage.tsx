@@ -16,7 +16,7 @@ function isNextJsImage(slide: YetSlide) {
   );
 }
 
-export default function NextJsImage({ slide, offset, rect }: RenderSlideProps<YetSlide>) {
+export const NextJsImage = ({ slide, offset, rect }: RenderSlideProps<YetSlide>) => {
   const {
     on: { click },
     carousel: { imageFit },

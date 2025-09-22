@@ -5,12 +5,12 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'res.cloudinary.com',
+        protocol: "https",
+        hostname: "res.cloudinary.com",
       },
       {
-        protocol: 'https',
-        hostname: 'stable-song-05dbc98b6f.media.strapiapp.com',
+        protocol: "https",
+        hostname: "stable-song-05dbc98b6f.media.strapiapp.com",
       },
     ],
   },

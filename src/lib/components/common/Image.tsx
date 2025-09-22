@@ -8,6 +8,8 @@ interface IImageProps {
     width?: string
     height?: string
     unoptimized?: boolean
+    className?: string
+    priority?: boolean
 }
 
 const ImageCustom = (props: IImageProps) => {
@@ -23,9 +25,11 @@ const ImageCustom = (props: IImageProps) => {
                 height: props?.height || 'auto',
                 objectFit: props?.objectFit || 'cover',
             }}
+            className={props?.className || ''}
             unoptimized={props?.unoptimized || false}
-        ></Image>
+            priority={props?.priority || false}
+        />
     )
 }
 
-export default ImageCustom
+export { ImageCustom };
