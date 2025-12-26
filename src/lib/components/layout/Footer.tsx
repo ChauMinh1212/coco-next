@@ -8,7 +8,8 @@ export const Footer = () => {
                 <div className="font-dejavu text-sm lg:text-base">
                     <p><span className="font-semibold mr-[3px]">Liên hệ:</span><a href="tel:+84967387309">0967 387 309</a> (Phương Nam)</p>
                     <p><span className="font-semibold mr-[3px]">Zalo:</span><a href="https://zalo.me/0967387309" target="_blank">0967 387 309</a> (Phương Nam)</p>
-                    <p><span className="font-semibold mr-[3px]">Định vị:</span><a target="_blank" href="https://maps.app.goo.gl/pgvLoQA7wVV4ECJ69">COCO GARDEN (Phà Cát Lái, Phú Hữu, Nhơn Trạch, Đồng Nai)</a></p>
+                    {/* <p><span className="font-semibold mr-[3px]">Định vị:</span><a target="_blank" href="https://maps.app.goo.gl/pgvLoQA7wVV4ECJ69">COCO GARDEN (Phà Cát Lái, Phú Hữu, Nhơn Trạch, Đồng Nai)</a></p> */}
+                    <p><span className="font-semibold mr-[3px]">Định vị:</span><a target="_blank" href="https://www.google.com/maps">COCO GARDEN (Phà Cát Lái, Phú Hữu, Nhơn Trạch, Đồng Nai)</a></p>
                     <p><span className="font-semibold mr-[3px]">Gmail:</span><a href="mailto:cocogarden.dn@gmail.com">cocogarden.dn@gmail.com</a></p>
                 </div>
                 <div className="w-fit relative text-4xl sm:text-5xl">
