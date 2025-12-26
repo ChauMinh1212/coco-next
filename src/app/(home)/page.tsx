@@ -170,7 +170,17 @@ const HomePage = () => {
                                     KHÔNG GIAN CHUNG
                                 </p>
                                 <SlideImg
-                                    img={IMG_SPACE_COMMON}
+                                    img={IMG_SPACE_COMMON.map((item) => ({
+                                        ...item,
+                                        src: `${process.env.NEXT_PUBLIC_CDN_URL}${item.src}`,
+                                        ...(item.type == 'video' && {
+                                            sources: item.sources.map((source) => ({
+                                                ...source,
+                                                src: `${process.env.NEXT_PUBLIC_CDN_URL}${source.src}`,
+                                            })),
+                                        }),
+                                    }))
+                                    }
                                     className="max-w-5xl w-full aspect-[4/2] border-white border-[3px] rounded-[30px] bg-black"
                                 ></SlideImg>
                             </div>

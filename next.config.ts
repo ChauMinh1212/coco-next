@@ -6,11 +6,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "res.cloudinary.com",
-      },
-      {
-        protocol: "https",
-        hostname: "stable-song-05dbc98b6f.media.strapiapp.com",
+        hostname: "cdn.cocogarden.vn",
       },
     ],
   },

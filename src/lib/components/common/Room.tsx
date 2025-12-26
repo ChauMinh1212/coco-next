@@ -3,6 +3,8 @@ import { BookingButton } from "./BookingButton"
 import { SlideImg } from "./SlideImage"
 
 const Room = ({ room }: { room: IRoom }) => {
+    const cdnUrl = process.env.NEXT_PUBLIC_CDN_URL;
+    console.log(cdnUrl);
     return (
         <div
             className="sm:flex flex-col sm:flex-row bg-white font-sriracha sm:text-xl text-[13px] rounded-[20px]"
@@ -10,7 +12,20 @@ const Room = ({ room }: { room: IRoom }) => {
             <div className="flex-1 border-[3px] border-[#00552c] rounded-[20px] overflow-hidden aspect-[1/1] sm:aspect-[1/1.1]">
                 <div className="h-full w-full">
                     <SlideImg
-                        img={room.img.length != 0 ? room.img : [{ src: '/img/default.jpg' }]}
+                        img={room.img.length != 0 ? room.img.map((item) => {
+                            return {
+                                ...item,
+                                src: `${process.env.NEXT_PUBLIC_CDN_URL}${item.src}`,
+                                ...(item.type == 'video' && {
+                                    sources: item.sources.map((source) => {
+                                        return {
+                                            ...source,
+                                            src: `${process.env.NEXT_PUBLIC_CDN_URL}${source.src}`,
+                                        }
+                                    })
+                                }),
+                            }
+                        }) : [{ src: '/img/default.jpg' }]}
                         className="w-full h-full bg-black"
                         objectFit="cover"
                     />

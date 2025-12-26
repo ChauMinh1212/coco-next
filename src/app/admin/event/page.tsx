@@ -21,6 +21,7 @@ import {
     Typography
 } from "@mui/material";
 import { useEffect, useState } from "react";
+import sha256 from "crypto-js/sha256";
 
 interface IEvent {
     id: string;
@@ -33,6 +34,11 @@ interface IEvent {
     to: string;
     sort?: number;
 }
+
+const checkPassword = (input: string) => {
+    const hash = sha256(input).toString();
+    return hash === process.env.NEXT_PUBLIC_ADMIN_PASSWORD_HASH;
+};
 
 export default function AdminEventPage() {
     const [isAuth, setIsAuth] = useState(false);
@@ -52,12 +58,8 @@ export default function AdminEventPage() {
     });
 
     useEffect(() => {
-        const adminPassword = process.env.NEXT_PUBLIC_ADMIN_PASSWORD;
         const password = window.prompt("Vui lòng nhập mật khẩu admin:");
-        if (
-            password &&
-            password === adminPassword
-        ) {
+        if (checkPassword(password)) {
             setIsAuth(true);
         } else {
             alert("Sai mật khẩu! Bạn không có quyền truy cập.");

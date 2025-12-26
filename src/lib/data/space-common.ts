@@ -1,101 +1,101 @@
 export const IMG_SPACE_COMMON: any[] = [
   {
-    src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1751527172/13_ygiue6.jpg",
+    src: "/common/1.jpg",
   },
   {
-    src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1751527172/14_mjaicx.jpg",
+    src: "/common/2.jpg",
   },
   {
-    src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1751527171/15_vjstrp.jpg",
+    src: "/common/3.jpg",
   },
   {
-    src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1751527169/16_qlhytq.jpg",
+    src: "/common/4.jpg",
   },
   {
-    src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1751527169/17_pqfezy.jpg",
+    src: "/common/5.jpg",
   },
   {
-    src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1751527170/18_c6www5.jpg",
-  },
-  {
-    src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1751527171/19_etdsui.jpg",
-  },
-  {
-    src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1751527169/20_jwtvtv.jpg",
-  },
-  {
-    src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1751527244/21_twylv5.jpg",
-  },
-  {
-    src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1751527244/22_llqk7s.jpg",
-  },
-  {
-    src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1751527244/23_y8bmm0.jpg",
-  },
-  {
-    src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1751527245/24_t7ddkk.jpg",
-  },
-  {
-    src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1751527245/25_ortnqk.jpg",
-  },
-  {
-    src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1751527246/26_afi9ue.jpg",
-  },
-  {
-    src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1751527245/27_mmrsh0.jpg",
-  },
-  {
-    src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1751527245/28_qmmjmd.jpg",
-  },
-  {
-    src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1751527246/29_yriums.jpg",
-  },
-  {
-    src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1751527246/30_uosx70.jpg",
+    src: "/common/6.jpg",
   },
   {
     type: "video",
     sources: [
       {
-        src: "https://res.cloudinary.com/dbrmsfbyk/video/upload/v1751527781/31_k74gd2.mp4",
+        src: "/common/7.mp4",
         type: "video/mp4",
       },
     ],
   },
   {
-    src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1751527169/1_fvxbg5.jpg",
+    src: "/common/8.jpg",
   },
   {
-    src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1751527169/2_vqk3uk.jpg",
+    src: "/common/9.jpg",
   },
   {
-    src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1751527170/3_ymzvee.jpg",
+    src: "/common/10.jpg",
   },
   {
-    src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1751527171/4_wgl84i.jpg",
+    src: "/common/11.jpg",
   },
   {
-    src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1751527170/5_t3m92c.jpg",
+    src: "/common/12.jpg",
   },
   {
-    src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1751527169/6_t1o581.jpg",
+    src: "/common/13.jpg",
   },
   {
-    src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1751527170/7_pz6mwp.jpg",
+    src: "/common/14.jpg",
   },
   {
-    src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1751527172/8_e8axvq.jpg",
+    src: "/common/15.jpg",
   },
   {
-    src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1751527172/9_zhp6o6.jpg",
+    src: "/common/16.jpg",
   },
   {
-    src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1751527170/10_d5szuf.jpg",
+    src: "/common/17.jpg",
   },
   {
-    src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1751527171/11_ewzr68.jpg",
+    src: "/common/18.jpg",
   },
   {
-    src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1751527170/12_md6slq.jpg",
+    src: "/common/19.jpg",
+  },
+  {
+    src: "/common/20.jpg",
+  },
+  {
+    src: "/common/21.jpg",
+  },
+  {
+    src: "/common/22.jpg",
+  },
+  {
+    src: "/common/23.jpg",
+  },
+  {
+    src: "/common/24.jpg",
+  },
+  {
+    src: "/common/25.jpg",
+  },
+  {
+    src: "/common/26.jpg",
+  },
+  {
+    src: "/common/27.jpg",
+  },
+  {
+    src: "/common/28.jpg",
+  },
+  {
+    src: "/common/29.jpg",
+  },
+  {
+    src: "/common/30.jpg",
+  },
+  {
+    src: "/common/31.jpg",
   },
 ];

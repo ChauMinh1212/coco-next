@@ -67,8 +67,9 @@ const SlideImg = (props: ISlideImgProps) => {
                         {item.type == 'video' && (
                             <video
                                 src={item.sources[0].src}
-                                autoPlay
                                 muted
+                                autoPlay
+                                playsInline
                                 loop
                                 className={`
                                     h-full 

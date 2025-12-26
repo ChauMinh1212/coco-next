@@ -5,22 +5,64 @@ export const ROOMS_SG: IRoomSG[] = [
     name: "BASIC HOME 1, 2, 3",
     img: [
       {
-        src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1758540277/1_kou8pp.jpg",
+        src: "/basic/1.jpg",
       },
       {
-        src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1758540277/2_gvbi9b.jpg",
+        src: "/basic/2.jpg",
       },
       {
-        src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1758540277/3_oo9idx.jpg",
+        src: "/basic/3.jpg",
       },
       {
-        src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1758540277/4_uyfdbe.jpg",
+        src: "/basic/4.jpg",
       },
       {
-        src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1758540277/5_edevyc.jpg",
+        src: "/basic/5.jpg",
       },
       {
-        src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1758540278/6_o7bdnf.jpg",
+        src: "/basic/6.jpg",
+      },
+      {
+        src: "/basic/7.jpg",
+      },
+      {
+        src: "/basic/8.jpg",
+      },
+      {
+        src: "/basic/9.jpg",
+      },
+      {
+        src: "/basic/10.jpg",
+      },
+      {
+        src: "/basic/11.jpg",
+      },
+      {
+        src: "/basic/12.jpg",
+      },
+      {
+        src: "/basic/13.jpg",
+      },
+      {
+        src: "/basic/14.jpg",
+      },
+      {
+        src: "/basic/15.jpg",
+      },
+      {
+        src: "/basic/16.jpg",
+      },
+      {
+        src: "/basic/17.jpg",
+      },
+      {
+        src: "/basic/18.jpg",
+      },
+      {
+        src: "/basic/19.jpg",
+      },
+      {
+        src: "/basic/20.jpg",
       },
     ],
     address: "796/17 Trường Sa Phường 14, Quận 3, Tp. HCM",
@@ -34,76 +76,46 @@ export const ROOMS_SG: IRoomSG[] = [
     name: "HOMESTAY (D3 1-1)",
     img: [
       {
-        src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1758509243/1_uiiubl.jpg",
+        src: "/d311/1.jpg",
       },
       {
-        src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1758509243/2_ixdoju.jpg",
+        src: "/d311/2.jpg",
       },
       {
-        src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1758509244/3_ks6hef.jpg",
+        src: "/d311/3.jpg",
       },
       {
-        src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1758509243/4_sxhax9.jpg",
+        src: "/d311/4.jpg",
       },
       {
-        src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1758509244/5_jzlqh4.jpg",
+        src: "/d311/5.jpg",
       },
       {
-        src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1758509244/6_jdva0h.jpg",
+        src: "/d311/6.jpg",
       },
       {
-        src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1758509244/7_be6bcs.jpg",
+        src: "/d311/7.jpg",
       },
       {
-        src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1758509244/8_ujxafw.jpg",
+        src: "/d311/8.jpg",
       },
       {
-        src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1758509244/9_cnagcy.jpg",
+        src: "/d311/9.jpg",
       },
       {
-        src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1758509245/10_dfaqk5.jpg",
+        src: "/d311/10.jpg",
       },
       {
-        src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1758509245/11_tid3n9.jpg",
+        src: "/d311/11.jpg",
       },
       {
-        src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1758509246/12_as3wcs.jpg",
+        src: "/d311/12.jpg",
       },
       {
-        src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1758509247/13_lopgzp.jpg",
+        src: "/d311/13.jpg",
       },
       {
-        src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1758509247/14_to5kxp.jpg",
-      },
-      {
-        src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1758509248/15_luk81y.jpg",
-      },
-      {
-        src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1758509249/16_guziaz.jpg",
-      },
-      {
-        src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1758509250/17_tkctqm.jpg",
-      },
-      {
-        src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1758509251/18_xlqw4k.jpg",
-      },
-      {
-        src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1758509251/19_ko3kx9.jpg",
-      },
-      {
-        src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1758509252/20_yhfzga.jpg",
-      },
-      {
-        src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1758509252/21_icmijp.jpg",
-      },
-      {
-        src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1758509253/22_cjzui5.jpg",
-      },
-      {
-        src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1758509253/23_jgjw9c.jpg",
-      },
-      {
-        src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1758509254/24_rxrypk.jpg",
+        src: "/d311/14.jpg",
       },
     ],
     address: "796/17 Trường Sa Phường 14, Quận 3, Tp. HCM",
@@ -117,55 +129,67 @@ export const ROOMS_SG: IRoomSG[] = [
     name: "HOMESTAY (D3 1-2)",
     img: [
       {
-        src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1758509602/1_uum8jt.jpg",
+        src: "/d312/1.jpg",
       },
       {
-        src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1758509602/2_sg7dka.jpg",
+        src: "/d312/2.jpg",
       },
       {
-        src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1758509602/3_gehuxg.jpg",
+        src: "/d312/3.jpg",
       },
       {
-        src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1758509603/4_nevqnf.jpg",
-      },
-      {
-        src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1758509603/5_syki33.jpg",
-      },
-      {
-        src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1758509603/6_fvfl1m.jpg",
-      },
-      {
-        src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1758509604/7_bknuow.jpg",
-      },
-      {
-        src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1758509604/8_xk122u.jpg",
-      },
-      {
-        sources: [
-          {
-            src: "https://res.cloudinary.com/dbrmsfbyk/video/upload/v1758509648/9_wbvv2w.mp4",
-            type: "video/mp4",
-          },
-        ],
-        type: "video",
+        src: "/d312/4.jpg",
       },
       {
         type: "video",
         sources: [
           {
-            src: "https://res.cloudinary.com/dbrmsfbyk/video/upload/v1758509648/10_e2lcrr.mp4",
+            src: "/d312/5.mp4",
             type: "video/mp4",
           },
         ],
       },
       {
-        src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1758509607/11_hahfj5.jpg",
+        type: "video",
+        sources: [
+          {
+            src: "/d312/6.mp4",
+            type: "video/mp4",
+          },
+        ],
       },
       {
-        src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1758509606/12_xogxo9.jpg",
+        src: "/d312/7.jpg",
       },
       {
-        src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1758509607/15_klvjn7.jpg",
+        src: "/d312/8.jpg",
+      },
+      {
+        src: "/d312/9.jpg",
+      },
+      {
+        src: "/d312/10.jpg",
+      },
+      {
+        src: "/d312/11.jpg",
+      },
+      {
+        src: "/d312/12.jpg",
+      },
+      {
+        src: "/d312/13.jpg",
+      },
+      {
+        src: "/d312/14.jpg",
+      },
+      {
+        src: "/d312/15.jpg",
+      },
+      {
+        src: "/d312/16.jpg",
+      },
+      {
+        src: "/d312/17.jpg",
       },
     ],
     address: "796/17 Trường Sa Phường 14, Quận 3, Tp. HCM",
@@ -189,16 +213,22 @@ export const ROOMS_SG: IRoomSG[] = [
     name: "HOMESTAY (D3 2-2)",
     img: [
       {
-        src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1758510131/1_css4jy.jpg",
+        src: "/d322/1.jpg",
       },
       {
-        src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1758510127/2_x4h1jj.jpg",
+        src: "/d322/2.jpg",
+      },
+      {
+        src: "/d322/3.jpg",
+      },
+      {
+        src: "/d322/4.jpg",
       },
       {
         type: "video",
         sources: [
           {
-            src: "https://res.cloudinary.com/dbrmsfbyk/video/upload/v1758510155/3_qevz8y.mp4",
+            src: "/d322/5.mp4",
             type: "video/mp4",
           },
         ],
@@ -207,7 +237,7 @@ export const ROOMS_SG: IRoomSG[] = [
         type: "video",
         sources: [
           {
-            src: "https://res.cloudinary.com/dbrmsfbyk/video/upload/v1758510156/4_zqk98i.mp4",
+            src: "/d322/6.mp4",
             type: "video/mp4",
           },
         ],
@@ -216,7 +246,7 @@ export const ROOMS_SG: IRoomSG[] = [
         type: "video",
         sources: [
           {
-            src: "https://res.cloudinary.com/dbrmsfbyk/video/upload/v1758510157/5_eyrewo.mp4",
+            src: "/d322/7.mp4",
             type: "video/mp4",
           },
         ],
@@ -225,28 +255,10 @@ export const ROOMS_SG: IRoomSG[] = [
         type: "video",
         sources: [
           {
-            src: "https://res.cloudinary.com/dbrmsfbyk/video/upload/v1758510156/6_howxh2.mp4",
+            src: "/d322/8.mp4",
             type: "video/mp4",
           },
         ],
-      },
-      {
-        src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1758510128/7_rh8ydm.jpg",
-      },
-      {
-        src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1758510128/8_fqxoop.jpg",
-      },
-      {
-        src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1758510129/9_bn2dcy.jpg",
-      },
-      {
-        src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1758510130/10_juv3p0.jpg",
-      },
-      {
-        src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1758510131/11_kxsadu.jpg",
-      },
-      {
-        src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1758510133/12_stpx1j.jpg",
       },
     ],
     address: "796/17 Trường Sa Phường 14, Quận 3, Tp. HCM",
@@ -260,40 +272,37 @@ export const ROOMS_SG: IRoomSG[] = [
     name: "HOMESTAY (D3 3-1)",
     img: [
       {
-        src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1758510315/1_w0ajkm.jpg",
+        src: "/d331/1.jpg",
       },
       {
-        src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1758510315/2_vmkm9l.jpg",
+        src: "/d331/2.jpg",
       },
       {
-        src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1758510316/3_i5xtdo.jpg",
+        src: "/d331/3.jpg",
       },
       {
-        src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1758510317/4_qdhf0v.jpg",
+        src: "/d331/4.jpg",
       },
       {
-        src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1758510321/5_desfps.jpg",
+        src: "/d331/5.jpg",
       },
       {
-        src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1758510322/6_otetrj.jpg",
+        src: "/d331/6.jpg",
       },
       {
-        src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1758510323/7_htwcp4.jpg",
+        src: "/d331/7.jpg",
       },
       {
-        src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1758510326/8_w0duxg.jpg",
+        src: "/d331/8.jpg",
       },
       {
-        src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1758510327/9_nuh4xa.jpg",
+        src: "/d331/9.jpg",
       },
       {
-        src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1758510328/10_sveqmz.jpg",
+        src: "/d331/10.jpg",
       },
       {
-        src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1758510330/11_igfhbq.jpg",
-      },
-      {
-        src: "https://res.cloudinary.com/dbrmsfbyk/image/upload/v1758510331/12_r5hjun.jpg",
+        src: "/d331/11.jpg",
       },
     ],
     address: "796/17 Trường Sa Phường 14, Quận 3, Tp. HCM",
@@ -310,7 +319,7 @@ export const ROOMS_SG: IRoomSG[] = [
         type: "video",
         sources: [
           {
-            src: "https://res.cloudinary.com/dbrmsfbyk/video/upload/v1758515115/1_izutoi.mp4",
+            src: "/d332/1.mp4",
             type: "video/mp4",
           },
         ],
@@ -319,7 +328,7 @@ export const ROOMS_SG: IRoomSG[] = [
         type: "video",
         sources: [
           {
-            src: "https://res.cloudinary.com/dbrmsfbyk/video/upload/v1758515085/2_jxqtyc.mp4",
+            src: "/d332/2.mp4",
             type: "video/mp4",
           },
         ],
@@ -328,7 +337,7 @@ export const ROOMS_SG: IRoomSG[] = [
         type: "video",
         sources: [
           {
-            src: "https://res.cloudinary.com/dbrmsfbyk/video/upload/v1758515083/3_bxjsxj.mp4",
+            src: "/d332/3.mp4",
             type: "video/mp4",
           },
         ],
@@ -337,7 +346,7 @@ export const ROOMS_SG: IRoomSG[] = [
         type: "video",
         sources: [
           {
-            src: "https://res.cloudinary.com/dbrmsfbyk/video/upload/v1758515088/4_jwqvmk.mp4",
+            src: "/d332/4.mp4",
             type: "video/mp4",
           },
         ],
@@ -346,7 +355,7 @@ export const ROOMS_SG: IRoomSG[] = [
         type: "video",
         sources: [
           {
-            src: "https://res.cloudinary.com/dbrmsfbyk/video/upload/v1758515085/5_xtfpgn.mp4",
+            src: "/d332/5.mp4",
             type: "video/mp4",
           },
         ],

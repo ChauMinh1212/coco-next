@@ -8,7 +8,20 @@ const RoomSG = ({ room }: { room: IRoomSG }) => {
             <div className="flex-1 overflow-hidden aspect-[1/1] sm:aspect-[1/1.1] -m-[2px] md:-m-[3px] border-[2px] md:border-[3px] border-[#00552c] rounded-[20px]">
                 <div className="h-full w-full">
                     <SlideImg
-                        img={room.img.length != 0 ? room.img : [{ src: '/img/default.jpg' }]}
+                        img={room.img.length != 0 ? room.img.map((item) => {
+                            return {
+                                ...item,
+                                src: `${process.env.NEXT_PUBLIC_CDN_URL}${item.src}`,
+                                ...(item.type == 'video' && {
+                                    sources: item.sources.map((source) => {
+                                        return {
+                                            ...source,
+                                            src: `${process.env.NEXT_PUBLIC_CDN_URL}${source.src}`,
+                                        }
+                                    })
+                                }),
+                            }
+                        }) : [{ src: '/img/default.jpg' }]}
                         className="w-full h-full bg-black"
                         objectFit="cover"
                     />
